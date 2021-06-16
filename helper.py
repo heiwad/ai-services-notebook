@@ -7,6 +7,14 @@ import uuid
 import IPython
 import io
 from PIL import Image, ImageDraw, ExifTags, ImageColor, ImageFont
+import subprocess
+
+def get_bucket_and_region():
+    # Look up the S3 bucket created by cloudformation
+    # For this lookup Sagemaker shares notebook instance metadata via a special file that requires sudo to read...
+    result = subprocess.run(['sh','lookup-bucket.sh'], stdout=subprocess.PIPE)
+    bucket_name,region_name = str(result.stdout)[2:-3].split(',')
+    return bucket_name,region_name
 
 def upload_and_get_url(bucket_name, key, audio,region_name):
     

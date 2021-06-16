@@ -1,0 +1,49 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: "AI Services demo notebook and S3 bucket"
+Resources:
+  NotebookRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      Tags: 
+      - Key: "project"
+        Value: "ai-services-demo"
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - sagemaker.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
+        - arn:aws:iam::aws:policy/AmazonRekognitionFullAccess
+        - arn:aws:iam::aws:policy/AmazonPollyFullAccess
+        - arn:aws:iam::aws:policy/AmazonTranscribeFullAccess
+        - arn:aws:iam::aws:policy/TranslateFullAccess
+        - arn:aws:iam::aws:policy/ComprehendFullAccess
+        - arn:aws:iam::aws:policy/AmazonSageMakerReadOnly
+        - arn:aws:iam::aws:policy/AWSCloudFormationReadOnlyAccess
+  NotebookInstance:
+    Type: "AWS::SageMaker::NotebookInstance"
+    Properties:
+      InstanceType: "ml.t3.medium"
+      RoleArn: !GetAtt NotebookRole.Arn
+      NotebookInstanceName: !Ref "AWS::StackName"
+      DefaultCodeRepository: 'https://github.com/heiwad/ai-services-notebook'
+      Tags: 
+      - Key: "project"
+        Value: "ai-services-demo"
+  TipsAiServicesBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties: 
+      Tags: 
+      - Key: "project"
+        Value: "ai-services-demo"
+Outputs:
+  NotebookInstanceId:
+    Value: !Ref NotebookInstance
+  S3Bucket:
+    Value: !Ref S3Bucket
