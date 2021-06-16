@@ -45,5 +45,13 @@ Resources:
 Outputs:
   NotebookInstanceId:
     Value: !Ref NotebookInstance
+  NotebookInstanceUrl:
+    Value: !Join
+      - ''
+      - - 'https://console.aws.amazon.com/sagemaker/home?region='
+        - !Ref AWS::Region
+        - '#/notebook-instances/openNotebook/'
+        - !Ref AWS::StackName
+        - '?view=classic'    
   S3Bucket:
     Value: !Ref AiServicesS3Bucket
