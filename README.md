@@ -18,4 +18,4 @@ Deploy the deploy-me-cfn.yaml to an AWS account usigng Cloudformation to get a S
 - [Enable smart text analytics using Amazon Elasticsearch Service and Amazon Comprehend](https://aws.amazon.com/blogs/machine-learning/enable-smart-text-analytics-using-amazon-elasticsearch-search-and-amazon-comprehend/)
 - [Automated video editing with YOU as the star!](https://aws.amazon.com/blogs/machine-learning/automated-video-editing-with-you-as-the-star/)
 - [Build a custom vocabulary to enhance speech-to-text transcription accuracy with Amazon Transcribe](https://aws.amazon.com/blogs/machine-learning/build-a-custom-vocabulary-to-enhance-speech-to-text-transcription-accuracy-with-amazon-transcribe/) 
-- [Translate, redact, and analyze text using SQL functions with Amazon Athena, Amazon Translate, and Amazon Comprehend](
+- [Translate, redact, and analyze text using SQL functions with Amazon Athena, Amazon Translate, and Amazon Comprehend](https://aws.amazon.com/blogs/machine-learning/translate-and-analyze-text-using-sql-functions-with-amazon-athena-amazon-translate-and-amazon-comprehend/)
