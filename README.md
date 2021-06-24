@@ -1,8 +1,8 @@
-# ai-services-notebook
+# AWS AI Services sample Jupyter notebook
 
 Deploy the `deploy-me-cfn.yaml` to an AWS account using Cloudformation to get a Sagemaker notebook instance that will allow you to run the `ai-demo.ipynb` notebook. The notebook has example code for Amazon Rekognition, Amazon Polly, Amazon Transcribe, Amazon Translate and Amazon Comprehend.
 
-# some interesting links
+# Some interesting links for further exploration
 **AI services sample applications:**
 
 - [AWS Media Insights](https://github.com/awslabs/aws-media-insights)
